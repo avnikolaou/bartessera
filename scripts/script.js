@@ -1,25 +1,32 @@
 // Slide show functionality
 let slideIndex = 0;
-showSlides(slideIndex);
+let mySlideshow;
+let slides = document.getElementsByClassName("mySlides");
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
+function minusSlides() {
+    clearTimeout(mySlideshow);
+    slideIndex -= 2;
+    if (slideIndex < 0 ) {
+        slideIndex = 2;
+    }
+
+    showSlides();
 }
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+function plusSlides() {
+    clearTimeout(mySlideshow);
+    showSlides();
 }
 
 function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
+    for ( let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
+
+    if (slideIndex >= slides.length) {slideIndex = 0}
+    slides[slideIndex ].style.display = "block";
     slideIndex ++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 7000); // Change image every 7 seconds
+    mySlideshow = setTimeout(showSlides, 7000); // Change image every 7 seconds
 }
 
 // When the user scrolls down 500px from the top of the document, show the button
