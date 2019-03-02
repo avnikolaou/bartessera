@@ -1,5 +1,5 @@
 // Slide show functionality
-let slideIndex = 1;
+let slideIndex = 0;
 showSlides(slideIndex);
 
 function plusSlides(n) {
