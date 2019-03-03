@@ -3,6 +3,23 @@ let slideIndex = 0;
 let mySlideshow;
 let slides = document.getElementsByClassName("mySlides");
 
+function scrollToDiv(e) {
+
+    if(!e) {
+        e = window.event;
+    }
+
+    let section = "scrollto-";
+    let id = e.target.id;
+    let destination = section.concat(id);
+    console.log(destination);
+
+    let elem = document.getElementById(destination);
+    if (!!elem && elem.scrollIntoView) {
+        elem.scrollIntoView({behavior: "smooth"});
+    }
+}
+
 function minusSlides() {
     clearTimeout(mySlideshow);
     slideIndex -= 2;

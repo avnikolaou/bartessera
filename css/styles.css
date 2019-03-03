@@ -180,10 +180,10 @@ body {
 
 .bar-image-container {
     display: block;
-    margin: auto auto auto 100px;
-    width: 40%;
+    margin: auto auto auto 50px;
+    width: 45%;
     background-color: black;
-    height: 600px;
+    height: 500px;
 }
 
 .bar-image {
@@ -199,9 +199,9 @@ body {
 
 .bar-text-info-container {
     display: block;
-    margin: auto 100px auto auto;
-    width: 40%;
-    height: 600px;
+    margin: auto 50px auto auto;
+    width: 45%;
+    height: 500px;
     text-align: center;
 }
 
